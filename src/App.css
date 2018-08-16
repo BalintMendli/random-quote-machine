@@ -1,7 +1,28 @@
-.App {
+#quote-box {
   text-align: center;
   background-color: white;
   width: 500px;
   min-height: 300px;
   border-radius: 3px;
+  padding: 40px 50px;
+}
+
+#text{
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#author{
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#sign{
+  margin-top: 10px;
+  text-align: center;
+  color: white;
 }
