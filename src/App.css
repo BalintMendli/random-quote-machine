@@ -34,6 +34,8 @@
   color: white;
   padding: 10px;
   min-width: 40px;
+  outline: none;
+  cursor: pointer;
 }
 
 .button:hover{
