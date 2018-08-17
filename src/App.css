@@ -7,11 +7,12 @@
   padding: 40px 50px;
 }
 
-#text{
+#text-div{
   min-height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
 }
 
 #author{
@@ -39,7 +40,7 @@
 }
 
 .button:hover{
-  background-color: #00dbdb;
+  opacity: 0.6;
 }
 
 #lower-div{
@@ -58,4 +59,8 @@
 
 #sign{
   font-size: 13px;
+}
+
+#quote-icon{
+  vertical-align: center;
 }

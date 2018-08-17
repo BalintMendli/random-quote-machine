@@ -32,7 +32,9 @@ class App extends Component {
     return (
       <div className="App">
         <div id="quote-box">
-          <div id="text"><FontAwesomeIcon icon="quote-left" color="#00dbdb" size="lg" pull="left"/>{this.state.quote}</div>
+          <div id="text-div">
+            <div id="text"><FontAwesomeIcon icon="quote-left" color="#00dbdb" size="sm" id="quote-icon"/> {this.state.quote}</div>
+          </div>
           <div id="author">- {this.state.author}</div>
           <div id="lower-div">
             <div id="social">
