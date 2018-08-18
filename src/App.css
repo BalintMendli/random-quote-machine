@@ -77,3 +77,16 @@
     opacity: 1;
   }
 }
+
+.color-transition {
+	animation: color-transition 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes color-transition {
+  0% {
+    background-color: var(--colorold);
+  }
+  100% {
+    background-color: var(--colornew);
+  }
+}
