@@ -16,7 +16,8 @@ class App extends Component {
       quote:'',
       author:'',
       fade:false,
-      color:'#dddddd'
+      color:'#dddddd',
+      oldcolor:'#ffffff'
     };
     this.changeQuote=this.changeQuote.bind(this);
     this.removeAnimClass=this.removeAnimClass.bind(this);
@@ -38,13 +39,14 @@ class App extends Component {
   }
   removeAnimClass(){
     this.setState({
-      fade:false
+      fade:false,
+      oldcolor:this.state.color
     })
   }
   render() {
     return (
       <div className="App">
-        <Helmet bodyAttributes={{style: 'background-color : '+this.state.color,class:this.state.fade ? 'fade-in' : ''}}/>
+        <Helmet bodyAttributes={{style:'--colorold: '+this.state.oldcolor+'; --colornew: '+this.state.color+';background-color : '+this.state.color,class:this.state.fade ? 'color-transition' : ''}}/>
         <div id="quote-box">
           <div id="text-div">
             <div id="text" className={this.state.fade ? 'fade-in' : ''} onAnimationEnd={this.removeAnimClass} style={{color:this.state.color}}><FontAwesomeIcon icon="quote-left" color={this.state.color} size="sm" id="quote-icon"/> {this.state.quote}</div>
