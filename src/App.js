@@ -54,8 +54,8 @@ class App extends Component {
           <div id="author" className={this.state.fade ? 'fade-in' : ''} style={{color:this.state.color}}>- {this.state.author}</div>
           <div id="lower-div">
             <div id="social">
-              <button id="tweet-quote" className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTwitter} size="lg" color="#ffffff"/></button>
-              <button id="tumblr" className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTumblr} size="lg" color="#ffffff"/></button>
+              <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text="+encodeURIComponent('"' + this.state.quote + '" ' + this.state.author)} id="tweet-quote" target="_blank"><button className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTwitter} size="lg" color="#ffffff"/></button></a>
+              <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(this.state.author) + '&content=' + encodeURIComponent(this.state.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} id="tumblr" target="_blank"><button className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTumblr} size="lg" color="#ffffff"/></button></a>
             </div>
             <button id="new-quote" className="button" onClick={this.changeQuote} style={{background:this.state.color}}>New quote</button>
           </div>
