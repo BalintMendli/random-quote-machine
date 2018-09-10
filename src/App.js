@@ -17,7 +17,6 @@ class App extends Component {
       author:'',
       fade:false,
       color:'#dddddd',
-      oldcolor:'#ffffff'
     };
     this.changeQuote=this.changeQuote.bind(this);
     this.removeAnimClass=this.removeAnimClass.bind(this);
@@ -40,24 +39,23 @@ class App extends Component {
   removeAnimClass(){
     this.setState({
       fade:false,
-      oldcolor:this.state.color
     })
   }
   render() {
     return (
       <div className="App">
-        <Helmet bodyAttributes={{style:'--colorold: '+this.state.oldcolor+'; --colornew: '+this.state.color+';background-color : '+this.state.color,class:this.state.fade ? 'color-transition' : ''}}/>
+        <Helmet bodyAttributes={{style:'background-color : '+this.state.color,class:'color-transition'}}/>
         <div id="quote-box">
           <div id="text-div">
-            <div id="text" className={this.state.fade ? 'fade-in' : ''} onAnimationEnd={this.removeAnimClass} style={{color:this.state.color}}><FontAwesomeIcon icon="quote-left" color={this.state.color} size="sm" id="quote-icon"/> {this.state.quote}</div>
+            <div id="text" className={this.state.fade ? 'color-transition fade-in' : 'color-transition'}  onAnimationEnd={this.removeAnimClass} style={{color:this.state.color}}><FontAwesomeIcon icon="quote-left" color={this.state.color} size="sm" id="quote-icon" className="color-transition"/> {this.state.quote}</div>
           </div>
-          <div id="author" className={this.state.fade ? 'fade-in' : ''} style={{color:this.state.color}}>- {this.state.author}</div>
+          <div id="author" className={this.state.fade ? 'color-transition fade-in' : 'color-transition'} style={{color:this.state.color}}>- {this.state.author}</div>
           <div id="lower-div">
             <div id="social">
-              <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text="+encodeURIComponent('"' + this.state.quote + '" ' + this.state.author)} id="tweet-quote" target="_blank"><button className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTwitter} size="lg" color="#ffffff"/></button></a>
-              <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes,freecodecamp&caption=' + encodeURIComponent(this.state.author) + '&content=' + encodeURIComponent(this.state.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} id="tumblr" target="_blank"><button className="button" style={{background:this.state.color}}><FontAwesomeIcon icon={faTumblr} size="lg" color="#ffffff"/></button></a>
+              <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text="+encodeURIComponent('"' + this.state.quote + '" ' + this.state.author)} id="tweet-quote" target="_blank"><button className="button color-transition" style={{background:this.state.color}}><FontAwesomeIcon icon={faTwitter} size="lg" color="#ffffff"/></button></a>
+              <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&caption=' + encodeURIComponent(this.state.author) + '&content=' + encodeURIComponent(this.state.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} id="tumblr" target="_blank"><button className="button color-transition" style={{background:this.state.color}}><FontAwesomeIcon icon={faTumblr} size="lg" color="#ffffff"/></button></a>
             </div>
-            <button id="new-quote" className="button" onClick={this.changeQuote} style={{background:this.state.color}}>New quote</button>
+            <button id="new-quote" className="button color-transition" onClick={this.changeQuote} style={{background:this.state.color}}>New quote</button>
           </div>
         </div>
         <div id="sign">by zenott</div>
