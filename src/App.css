@@ -67,7 +67,6 @@
 }
 
 .fade-in {
-  opacity: 0;
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
@@ -81,7 +80,7 @@
 }
 
 .color-transition{
-  transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 a{

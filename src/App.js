@@ -35,7 +35,7 @@ class App extends Component {
   removeAnimClass(){
     this.setState({
       fade:false,
-    })
+    });
   }
   render() {
     return (
