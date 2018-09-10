@@ -58,7 +58,7 @@ class App extends Component {
             <button id="new-quote" className="button color-transition" onClick={this.changeQuote} style={{background:this.state.color}}>New quote</button>
           </div>
         </div>
-        <div id="sign">by zenott</div>
+        <div id="sign">by <a href="https://zenott.github.com">zenott</a></div>
       </div>
     );
   }

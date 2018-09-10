@@ -37,10 +37,11 @@
   min-width: 40px;
   outline: none;
   cursor: pointer;
+  transition: opacity 250ms ease-in-out;
 }
 
 .button:hover{
-  opacity: 0.6;
+  opacity: 0.75;
 }
 
 #lower-div{
@@ -79,19 +80,11 @@
   }
 }
 
-/* .color-transition {
-	animation: color-transition 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-@keyframes color-transition {
-  0% {
-    background-color: var(--colorold);
-  }
-  100% {
-    background-color: var(--colornew);
-  }
-} */
-
 .color-transition{
   transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+a{
+  text-decoration: none;
+  color: #ffffff;
 }
