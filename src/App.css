@@ -66,6 +66,7 @@
 }
 
 .fade-in {
+  opacity: 0;
 	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
@@ -78,7 +79,7 @@
   }
 }
 
-.color-transition {
+/* .color-transition {
 	animation: color-transition 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
@@ -89,4 +90,8 @@
   100% {
     background-color: var(--colornew);
   }
+} */
+
+.color-transition{
+  transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
