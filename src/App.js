@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faQuoteLeft} from '@fortawesome/free-solid-svg-icons'
-import { faTwitter, faTumblr } from '@fortawesome/free-brands-svg-icons'
+import QuoteDiv from './QuoteDiv';
+import LowerDiv from './LowerDiv';
 import quotes from './quotes.json';
 import Helmet from 'react-helmet';
-
-library.add(faQuoteLeft, faTwitter, faTumblr);
 
 class App extends Component {
   constructor(props){
@@ -46,17 +42,8 @@ class App extends Component {
       <div className="App">
         <Helmet bodyAttributes={{style:'background-color : '+this.state.color,class:'color-transition'}}/>
         <div id="quote-box">
-          <div id="text-div">
-            <div id="text" className={this.state.fade ? 'color-transition fade-in' : 'color-transition'}  onAnimationEnd={this.removeAnimClass} style={{color:this.state.color}}><FontAwesomeIcon icon="quote-left" color={this.state.color} size="sm" id="quote-icon" className="color-transition"/> {this.state.quote}</div>
-          </div>
-          <div id="author" className={this.state.fade ? 'color-transition fade-in' : 'color-transition'} style={{color:this.state.color}}>- {this.state.author}</div>
-          <div id="lower-div">
-            <div id="social">
-              <a href={"https://twitter.com/intent/tweet?hashtags=quotes&text="+encodeURIComponent('"' + this.state.quote + '" ' + this.state.author)} id="tweet-quote" target="_blank"><button className="button color-transition" style={{background:this.state.color}}><FontAwesomeIcon icon={faTwitter} size="lg" color="#ffffff"/></button></a>
-              <a href={'https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&caption=' + encodeURIComponent(this.state.author) + '&content=' + encodeURIComponent(this.state.quote) + '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'} id="tumblr" target="_blank"><button className="button color-transition" style={{background:this.state.color}}><FontAwesomeIcon icon={faTumblr} size="lg" color="#ffffff"/></button></a>
-            </div>
-            <button id="new-quote" className="button color-transition" onClick={this.changeQuote} style={{background:this.state.color}}>New quote</button>
-          </div>
+          <QuoteDiv quote={this.state.quote} author={this.state.author} fade={this.state.fade} color={this.state.color} removeAnimClass={this.removeAnimClass} />
+          <LowerDiv quote={this.state.quote} author={this.state.author} changeQuote={this.changeQuote} color={this.state.color} />
         </div>
         <div id="sign">by <a href="https://zenott.github.com">zenott</a></div>
       </div>
