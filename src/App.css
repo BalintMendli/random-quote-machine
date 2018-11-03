@@ -7,7 +7,7 @@
   padding: 40px 50px;
 }
 
-#text-div{
+#text-div {
   min-height: 180px;
   display: flex;
   align-items: center;
@@ -15,20 +15,20 @@
   font-size: 36px;
 }
 
-#author{
+#author {
   min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
-#sign{
+#sign {
   margin-top: 10px;
   text-align: center;
   color: white;
 }
 
-.button{
+.button {
   border: none;
   border-radius: 3px;
   background-color: aqua;
@@ -40,34 +40,34 @@
   transition: opacity 250ms ease-in-out;
 }
 
-.button:hover{
+.button:hover {
   opacity: 0.75;
 }
 
-#lower-div{
+#lower-div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#new-quote{
+#new-quote {
   justify-self: flex-end;
 }
 
-#tweet-quote{
+#tweet-quote {
   margin-right: 10px;
 }
 
-#sign{
+#sign {
   font-size: 13px;
 }
 
-#quote-icon{
+#quote-icon {
   vertical-align: center;
 }
 
 .fade-in {
-	animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 @keyframes fade-in {
@@ -79,11 +79,23 @@
   }
 }
 
-.color-transition{
+.color-transition {
   transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-a{
+a {
   text-decoration: none;
   color: #ffffff;
+}
+
+@media (max-width: 620px) {
+  #quote-box {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #text-div {
+    font-size: 20px;
+  }
 }
