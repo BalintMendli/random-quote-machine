@@ -1,14 +1,34 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 
-
-const QuoteDiv = (props) => (
-   <React.Fragment>
-      <div id="text-div">
-         <div id="text" className={props.fade ? 'color-transition fade-in' : 'color-transition'}  onAnimationEnd={props.removeAnimClass} style={{color:props.color}}><FontAwesomeIcon icon="quote-left" color={props.color} size="sm" id="quote-icon" className="color-transition"/> {props.quote}</div>
-         </div>
-         <div id="author" className={props.fade ? 'color-transition fade-in' : 'color-transition'} style={{color:props.color}}>- {props.author}</div>
-   </React.Fragment>
+const QuoteDiv = ({ fade, removeAnimClass, color, quote, author }) => (
+  <>
+    <div id="text-div">
+      <div
+        id="text"
+        className={fade ? 'color-transition fade-in' : 'color-transition'}
+        onAnimationEnd={removeAnimClass}
+        style={{ color }}
+      >
+        <FontAwesomeIcon
+          icon={faQuoteLeft}
+          color={color}
+          size="sm"
+          id="quote-icon"
+          className="color-transition"
+        />
+        {quote}
+      </div>
+    </div>
+    <div
+      id="author"
+      className={fade ? 'color-transition fade-in' : 'color-transition'}
+      style={{ color }}
+    >
+      - {author}
+    </div>
+  </>
 );
-  
-  export default QuoteDiv;
+
+export default QuoteDiv;
