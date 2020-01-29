@@ -22,16 +22,10 @@
   justify-content: flex-end;
 }
 
-#sign {
-  margin-top: 10px;
-  text-align: center;
-  color: white;
-}
-
 .button {
   border: none;
   border-radius: 3px;
-  background-color: aqua;
+  background-color: white;
   color: white;
   padding: 10px;
   min-width: 40px;
@@ -44,7 +38,7 @@
   opacity: 0.75;
 }
 
-#lower-div {
+#button-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -58,7 +52,10 @@
   margin-right: 10px;
 }
 
-#sign {
+.footer {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
   font-size: 13px;
 }
 
@@ -81,12 +78,7 @@
 }
 
 .color-transition {
-  transition: all 1.2s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-a {
-  text-decoration: none;
-  color: #ffffff;
+  transition: color, background-color 1.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 @media (max-width: 620px) {
